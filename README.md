@@ -23,7 +23,7 @@
 
 
 #### IBM Openwhisk
-![alt text](https://github.com/satyamsah/compare-Serverless-Technologies/blob/master/openswhiskflow.PNG)
+![alt text](https://github.com/satyamsah/compare-Serverless-Technologies/blob/master/openwhiskflow.PNG)
 
 
 1) As per the use case I created a trigger from AWS DynamoDB to call AWS Lambda
