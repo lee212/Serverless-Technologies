@@ -16,10 +16,11 @@
 
 | number of iterations | time inteval to execute(in seconds|
 | ------ | ------ |
-| 500   | 70.69
-| 1000  | 100.69 
-| 2000  | 170.33
-| 10000 | 748.73
+| 500   | 1.7 seconds
+| 1000  | 29.04 seconds
+| 2500  | 05 min 47.776 seconds
+| 5000 |  12 mins 38.903 seconds
+| 10000 | 26 mins 33.789 seconds
 
 
 #### IBM Openwhisk
@@ -37,7 +38,8 @@
 
 | number of iterations | time inteval to execute(in seconds|
 | ------ | ------ |
-| 500   | 70.69
-| 1000  | 100.69 
-| 2000  | 170.33
-| 10000 | 748.73
+| 500   | 20.7 seconds
+| 1000  | 1 min 4.675 seconds
+| 2500  | 04 min 67.569 seconds
+| 5000 |  11 mins 35.656 seconds
+| 10000 | 30 mins 23.005 seconds
