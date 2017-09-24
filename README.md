@@ -12,9 +12,9 @@
 3) In this scenario I had tested noted down the timestamp of start of the execution of a program that pushes the data two the remote LAMBDA function. 
 4) Latency: It is the time an application takes to be on wire. That mean from the time the application is triggered from the clients' environemnt(whether UI / or / code) till the application ends
 
-5) I have take 5 test cases with input size. The input for each recods remains in simimar format.The data in the database in getting feeded in based on the number of iteration. The number of rows in the table is equal to the number of iterations. Each tet case also depicts the time to generate the code.
+5) I have take 5 test cases with input size. The input for each recods remains in simimar format.The data in the database in getting feeded in based on the number of iteration. The number of rows in the table is equal to the number of iterations. Each test case  depicts the latency when the data was transferred from clients' code to update in AWS  Dyanamodb database to triggering the AWS Lambda fucntion.
 
-| number of iterations | time inteval to execute(in seconds|
+| number of records inserted in DB | time taken to execute the whole process(in second)|
 | ------ | ------ |
 | 500   | 1.7 seconds
 | 1000  | 29.04 seconds
@@ -34,12 +34,18 @@
 3) In this scenario I had tested noted down the timestamp of start of the execution of a program that pushes the data two the remote Openwhisk function. 
 4) Latency: It is the time an application takes to be on wire. That mean from the time the application is triggered from the clients' environemnt(whether UI / or / code) till the application ends
 
-5) I have take 5 test cases with input size. The input for each recods remains in simimar format.The data in the database in getting feeded in based on the number of iteration. The number of rows in the table is equal to the number of iterations. Each tet case also depicts the time to generate the code.
+5) I have take 5 test cases with input size. The input for each recods remains in simimar format.The data in the database in getting feeded in based on the number of iteration. The number of rows in the table is equal to the number of iterations. Each test case  depicts the latency when the data was transferred from clients' code to update in IBM cloudant database to triggering the IBM Openwhisk fucntion.
 
-| number of iterations | time inteval to execute(in seconds|
+| number of records inserted in DB | time taken to execute the whole process(in seconds)|
 | ------ | ------ |
 | 500   | 20.7 seconds
 | 1000  | 1 min 4.675 seconds
 | 2500  | 04 min 67.569 seconds
 | 5000 |  11 mins 35.656 seconds
 | 10000 | 30 mins 23.005 seconds
+
+
+
+Below id the graph comaprison:
+
+![alt text](https://github.com/satyamsah/compare-Serverless-Technologies/blob/master/Capture.PNG)
