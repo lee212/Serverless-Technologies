@@ -12,7 +12,7 @@ print(table.creation_date_time);
 
 print(datetime.now());
 with table.batch_writer() as batch:
-    for i in range(1,1001):
+    for i in range(1,2500):
         batch.put_item(
             Item={
                  'firstname': 'XXXX'+str(i),

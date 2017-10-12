@@ -3,7 +3,7 @@ from cloudant.error import CloudantException
 from cloudant.result import Result, ResultByKey
 from datetime import datetime
 
-client=Cloudant("<username>","<password>",url="<http://username-bluemix.cloudant.com>")
+client=Cloudant("636d3e65-c603-43de-90b9-d355c4992b06-bluemix","38094ac5cbc8ced89e66d2d85beb5009011735be0edf0f5aaeb9ed428004ecfd",url="http://636d3e65-c603-43de-90b9-d355c4992b06-bluemix.cloudant.com")
 client.connect();
 databaseName = "names"
 
@@ -19,7 +19,7 @@ else:
     my_database=client.create_database(databaseName)
 
 
-for i in range(1,10):
+for i in range(1,501):
     data = {
    '_id':'id'+str(i),
     'name': 'XXXX'+str(i),
