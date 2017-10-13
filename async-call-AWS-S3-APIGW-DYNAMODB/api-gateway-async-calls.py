@@ -5,11 +5,11 @@ import concurrent.futures
 
 async def main():
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         loop1 = asyncio.get_event_loop()
         res=[]
-        for i in range(500,1000):
-            data = {"operation":"create","tableName":"LambdaTable","payload":{"Item":{"Id":"google"+str(i),"name":"mountain view"+str(i)}}}
+        for i in range(1,3000):
+            data = {"operation":"create","tableName":"LambdaTable","payload":{"Item":{"Id":"google-"+str(i),"name":"mountain view-"+str(i)}}}
             url="https://2pcprzeela.execute-api.us-east-2.amazonaws.com/prod/DynamoDBManager"
             res.append(
             loop1.run_in_executor(executor,
