@@ -7,10 +7,10 @@ from datetime import datetime
 s3 = boto3.client('s3')
 
 
-for i in range(3001):
+for i in range(3200):
     filename = 'satyam'+str(i)+'.jpg'
     response = s3.delete_object(
-        Bucket='sourcesatyamresized',
+        Bucket='sourcesatyam',
         Key=filename
     )
 #

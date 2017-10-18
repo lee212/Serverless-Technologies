@@ -11,7 +11,7 @@ async def main():
     path="C:\\images\\"
     loop1=asyncio.get_event_loop()
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
-        for i in range(3001):
+        for i in range(3000):
             filename = 'satyam'+str(i)+'.jpg'
             abspath=path+"satyam0.jpg"
             #s3.upload_file(abspath,bucket_name, filename)

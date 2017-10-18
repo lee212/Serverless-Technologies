@@ -13,7 +13,7 @@ async def main():
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         with table.batch_writer() as batch:
             loop1 = asyncio.get_event_loop()
-            for i in range(1,1600):
+            for i in range(1,3200):
                 item={
                          'Id': 'google-'+str(i)
                     }
