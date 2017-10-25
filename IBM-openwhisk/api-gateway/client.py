@@ -11,7 +11,7 @@ async def main():
         res=[]
         for i in range(0,100):
             data = {"Id":"google-"+str(i),"name":"mountain view-"+str(i)}
-            url="https://service.us.apiconnect.ibmcloud.com/gws/apigateway/api/970ac94052782aa2caab8c95f619a43fa7391fb985693bb142a27551f12a3842/function/myaction"
+            url="<>"
             res.append(
             loop1.run_in_executor(executor,
                                  requests.post,
