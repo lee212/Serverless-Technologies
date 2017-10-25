@@ -1,0 +1,35 @@
+## curl command to call a action api
+
+curl -H "Content-Type: application/json" -X POST -d @parameters.json https://service.us.apiconnect.ibmcloud.com/gws/apigateway/api/970ac94052782aa2caab8c95f619a43fa7391fb985693bb142a27551f12a3842/function/myaction
+
+
+
+
+
+### object storage
+
+Retrieving resource instances in region global under account KUMAR SATYAM's Account as search4satty@gmail.com...
+OK
+Name                      Region   State    Type               Tags
+Cloud Object Storage-56   global   active   service_instance
+
+
+PS C:\independent study\AWS Lambda\09-20\serverless\compare-Serverless-Technologies\IBM\api-gateway> bx resource instance "Cloud Object Storage-56" -r global
+Retrieving resource instance Cloud Object Storage-56 under account KUMAR SATYAM's Account as search4satty@gmail.com...
+OK
+
+Name:                  Cloud Object Storage-56
+ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/4799ecd7b891b6cc75717a32fcb66f69:4dcec36e-5f8f-4efe-8f71-8e10cbcaad63::
+Region:                global
+Resource Name:         cloud-object-storage
+Resource Plan Name:    Lite
+Resource Group Name:   Default
+State:                 active
+Type:                  service_instance
+Tags:
+
+
+  curl -X "PUT" "https://s3.us-south.objectstorage.softlayer.net/yourbick" -H "Authorization: Bearer eyJraWQiOiIyMDE3MDkwNi0wMDowMDowMCIsImFsZyI6IlJTMjU2In0.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDQyMFFUIiwiaWQiOiJJQk1pZC0yNzAwMDQyMFFUIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNDIwUVQiLCJnaXZlbl9uYW1lIjoiS1VNQVIiLCJmYW1pbHlfbmFtZSI6IlNBVFlBTSIsIm5hbWUiOiJLVU1BUiBTQVRZQU0iLCJlbWFpbCI6InNlYXJjaDRzYXR0eUBnbWFpbC5jb20iLCJzdWIiOiJzZWFyY2g0c2F0dHlAZ21haWwuY29tIiwiYWNjb3VudCI6eyJic3MiOiI0Nzk5ZWNkN2I4OTFiNmNjNzU3MTdhMzJmY2I2NmY2OSJ9LCJpYXQiOjE1MDg3MTI1OTAsImV4cCI6MTUwODcxNjE5MCwiaXNzIjoiaHR0cHM6Ly9pYW0ubmcuYmx1ZW1peC5uZXQvb2lkYy90b2tlbiIsImdyYW50X3R5cGUiOiJ1cm46aWJtOnBhcmFtczpvYXV0aDpncmFudC10eXBlOmFwaWtleSIsInNjb3BlIjoib3BlbmlkIiwiY2xpZW50X2lkIjoiYngifQ.KRZmPSuyYrqg0PcIaVTJRn8VXHiFeB2buiyA8uB5S_F5dOXd0VlGhDsN3qSednCwAoe-VAvlUXQ_zi2RqrCRQWBb_kdDVA1VO60kOTR7H5vkKCbvs1sDJwWBkqpsJoRz2mnfKQAGpMhmKQbpEXxQpthyXA5qVrgI6-qbBa5MBU1jww5aTsoBWNfhPx_xpkEpVv2GLZq4dhrBUMHKR_JChRig5I3F_TN6aHU5ScxHenllu26snaOpzi2vou98jAvZN7iBOKO4yk3hOniz_RCHV5lzQQCO_zHli-IRCK1D2pScijERmDepjNSE-JGhRDB51q8kzTFqnpCOD7zrlQVEpg" -H "ibm-service-instance-id: crn:v1:bluemix:public:cloud-object-storage:global:a/4799ecd7b891b6cc75717a32fcb66f69:4dcec36e-5f8f-4efe-8f71-8e10cbcaad63::"
+
+
+
