@@ -49,4 +49,4 @@
 
 Below is the graph comaprison.As per the chart we can see that IBM Openwhisk-cloudant combination is swift when it comes to small data but AWS lambda-dynamodb combination experience less latency when it comes to upload high amount of data:
 
-![alt text](https://github.com/satyamsah/compare-Serverless-Technologies/blob/master/Capture.PNG)
+![alt text](https://github.com/satyamsah/Serverless-Technologies/blob/master/comparison.PNG)
