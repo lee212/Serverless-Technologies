@@ -10,7 +10,7 @@ async def main():
         #res=[]
         for i in range(0,3200):
             data ={"Id":"google-"+str(i),"name":"mountain view-"+str(i)}
-            url="<>"
+            url="<give the URL of action>"
             #res.append(
             loop1.run_in_executor(executor,
                                  requests.post,
