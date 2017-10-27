@@ -5,8 +5,7 @@ import shutil
 import StringIO
 import tempfile
 import time
-
-import configparser
+from ConfigParser import SafeConfigParser
 
 # URI scheme for Cloud Storage.
 GOOGLE_STORAGE = 'gs'
@@ -17,16 +16,18 @@ LOCAL_FILE = 'file'
 # under Credentials, create a new client ID for an installed application.
 # Required only if you have not configured client ID/secret in
 # the .boto file or as environment variables.
-
-config = configparser.ConfigParser()
+'''
+config = SafeConfigParser()
 config.read('client.ini')
-CLIENT_ID = config['gcp']['client_id']#'your client id'
-CLIENT_SECRET =config['gcp']['client_secretkey']# 'your client secret'
+CLIENT_ID = config.get('gcp','client_id') #'your client id'
+CLIENT_SECRET =config.get('gcp','client_secretkey')  # 'your client secret'
+print(CLIENT_ID)
+print(CLIENT_SECRET)
 gcs_oauth2_boto_plugin.SetFallbackClientIdAndSecret(CLIENT_ID, CLIENT_SECRET)
 
+'''
 
-
-'''  creating a bucket
+#  creating a bucket
 
 now = time.time()
 CATS_BUCKET = 'cats-%d' % now
@@ -51,19 +52,21 @@ for name in (CATS_BUCKET, DOGS_BUCKET):
   except boto.exception.StorageCreateError, e:
     print 'Failed to create bucket:', e
 
+
 '''
+ #   listing the objects in bucket
 
-'''     listing the objects in bucket
+header_values = {"x-goog-project-id": 'evocative-tide-183917' }
 
-uri = boto.storage_uri('', GOOGLE_STORAGE)
+uri = boto.storage_uri('', GOOGLE_STORAGE,debug=2)
 # If the default project is defined, call get_all_buckets() without arguments.
 for bucket in uri.get_all_buckets(headers=header_values):
-  print bucket.name
+  print (bucket.name)
+
 
 '''
 
-
-
+'''
 # Make some temporary files.
 temp_dir = tempfile.mkdtemp(prefix='googlestorage')
 tempfiles = {
@@ -72,18 +75,18 @@ tempfiles = {
 for filename, contents in tempfiles.iteritems():
   with open(os.path.join(temp_dir, filename), 'w') as fh:
     fh.write(contents)
-
+'''
 # Upload these files to DOGS_BUCKET.
-for filename in tempfiles:
-  with open(os.path.join(temp_dir, filename), 'r') as localfile:
 
-    dst_uri = boto.storage_uri(
-        DOGS_BUCKET + '/' + filename, GOOGLE_STORAGE)
-    # The key-related functions are a consequence of boto's
-    # interoperability with Amazon S3 (which employs the
-    # concept of a key mapping to localfile).
-    dst_uri.new_key().set_contents_from_file(localfile)
-  print 'Successfully created "%s/%s"' % (
-      dst_uri.bucket_name, dst_uri.object_name)
+
+filename="test-file-for-upload.jpg"
+tempdir="."
+with open(os.path.join(tempdir, filename), 'r') as localfile:
+	dst_uri = boto.storage_uri("kumar-upload-bucket" + '/' + filename, GOOGLE_STORAGE)
+	    # The key-related functions are a consequence of boto's
+	    # interoperability with Amazon S3 (which employs the
+	    # concept of a key mapping to localfile).
+	dst_uri.new_key().set_contents_from_file(localfile)
+print ('Successfully created "%s/%s"' % (dst_uri.bucket_name, dst_uri.object_name))
 
 shutil.rmtree(temp_dir)  # Don't forget to clean up!
